@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "bibtex-parse": "^2.1.0",
+    "bibtex-tidy": "^1.8.5",
+    "jsonfile": "^6.1.0"
+  }
+}
