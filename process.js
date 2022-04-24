@@ -8,7 +8,7 @@ const bibtexParse = require('bibtex-parse')
 /*
 https://github.com/FlamingTempura/website
 https://github.com/FlamingTempura/bibtex-tidy
-https://www.npmjs.com/package/bibtex-tidy
+https://github.com/FlamingTempura/bibtex-tidy
 https://github.com/FlamingTempura/bibtex-parse
 https://github.com/texworld/betterbib
 https://www.npmjs.com/package/astrocite-bibtex
@@ -20,6 +20,7 @@ https://www.bibtex.com/format/
 // MAKE TIDY:
 const bibtex = fs.readFileSync('./all.bib', 'utf8');
 let res = tidy.tidy(bibtex, {
+	sort: ["-year", "-month"],
 	duplicates: ["key"],
 	merge: "overwrite",
 	tab: true,
@@ -76,11 +77,17 @@ for (const e of json) {
 	if ("PAGES" in e) arr.push(`pp. ${e.PAGES}`)
 	if ("PUBLISHER" in e) arr.push(`${e.PUBLISHER}`)
 
-	if ("DOI" in e) arr.push(`DOI: <a target="_blank" href="http://dx.doi.org/${e.DOI}">${e.DOI}</a>`)
-	if ("URL" in e) arr.push(`<a target="_blank" href="${e.URL}">${e.URL}</a>`)
+	if ("DOI" in e) arr.push(`doi: ${e.DOI}`)
+	if ("URL" in e)
+		arr.push(`<a target="_blank" href="${e.URL}">link</a>`)
+	else
+		if ("DOI" in e) arr.push(`<a target="_blank" href="http://dx.doi.org/${e.DOI}">link</a>`)
+		
+	// Own props:
 	if ("PDF" in e) arr.push(`<a target="_blank" href="./pdf/${e.PDF}">report</a> (pdf)`)
-	if ("SLIDES" in e) arr.push(`<a target="_blank" href="pdf/${e.SLIDES}">slides</a>`)
 	if ("CONF" in e) arr.push(`<a target="_blank" href="${e.CONF}">conference</a>`)
+	if ("LINK" in e) arr.push(`<a target="_blank" href="${e.LINK}">link</a>`)
+	if ("SLIDES" in e) arr.push(`<a target="_blank" href="pdf/${e.SLIDES}">slides</a>`)
 		
 	if ("NOTE" in e) arr.push(`${e.NOTE}`)
 	
