@@ -24,7 +24,7 @@ let res = tidy.tidy(bibtex, {
 	duplicates: ["key"],
 	merge: "overwrite",
 	tab: true,
-	ddropAllCaps: true
+	dropAllCaps: true
 })
 // Write results:
 fs.writeFileSync("./all.bib", res.bibtex)
@@ -85,9 +85,9 @@ for (const e of json) {
 		
 	// Own props:
 	if ("PDF" in e) arr.push(`<a target="_blank" href="./pdf/${e.PDF}">report</a> (pdf)`)
-	if ("CONF" in e) arr.push(`<a target="_blank" href="${e.CONF}">conference</a>`)
 	if ("LINK" in e) arr.push(`<a target="_blank" href="${e.LINK}">link</a>`)
 	if ("SLIDES" in e) arr.push(`<a target="_blank" href="pdf/${e.SLIDES}">slides</a>`)
+	if ("CONF" in e) arr.push(`<a target="_blank" href="${e.CONF}">conference</a>`)
 		
 	if ("NOTE" in e) arr.push(`${e.NOTE}`)
 	
