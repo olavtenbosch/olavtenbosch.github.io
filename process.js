@@ -6,6 +6,7 @@ const jsonfile = require('jsonfile')
 const tidy = require('bibtex-tidy')
 const bibtexParse = require('bibtex-parse')
 /*
+https://www.bibtex.com/format/
 https://github.com/FlamingTempura/website
 https://github.com/FlamingTempura/bibtex-tidy
 https://github.com/FlamingTempura/bibtex-tidy
@@ -14,7 +15,6 @@ https://github.com/texworld/betterbib
 https://www.npmjs.com/package/astrocite-bibtex
 https://papercite.readthedocs.io
 https://scholar.google.com/intl/us/scholar/inclusion.html
-https://www.bibtex.com/format/
 */
 
 // MAKE TIDY:
