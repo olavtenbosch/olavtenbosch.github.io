@@ -20,6 +20,7 @@ https://scholar.google.com/intl/us/scholar/inclusion.html
 // MAKE TIDY:
 const bibtex = fs.readFileSync('./all.bib', 'utf8');
 let res = tidy.tidy(bibtex, {
+	curly: true,
 	sort: ["-year", "-month"],
 	duplicates: ["key"],
 	merge: "overwrite",
@@ -85,6 +86,7 @@ for (const e of json) {
 		
 	// Own props:
 	if ("PDF" in e) arr.push(`<a target="_blank" href="./pdf/${e.PDF}">report</a> (pdf)`)
+	if ("ABSTRACT" in e) arr.push(`<a target="_blank" href="./pdf/${e.ABSTRACT}">abstract</a> (pdf)`)
 	if ("LINK" in e) arr.push(`<a target="_blank" href="${e.LINK}">link</a>`)
 	if ("SLIDES" in e) arr.push(`<a target="_blank" href="pdf/${e.SLIDES}">slides</a>`)
 	if ("CONF" in e) arr.push(`<a target="_blank" href="${e.CONF}">conference</a>`)
