@@ -88,7 +88,7 @@ for (const e of json) {
 	if ("PDF" in e) arr.push(`<a target="_blank" href="./pdf/${e.PDF}">report</a> (pdf)`)
 	if ("ABSTRACT" in e) arr.push(`<a target="_blank" href="./pdf/${e.ABSTRACT}">abstract</a> (pdf)`)
 	if ("LINK" in e) arr.push(`<a target="_blank" href="${e.LINK}">link</a>`)
-	if ("SLIDES" in e) arr.push(`<a target="_blank" href="pdf/${e.SLIDES}">slides</a>`)
+	if ("SLIDES" in e) arr.push(`<a target="_blank" href="pdf/${e.SLIDES}">slides</a> (pdf)`)
 	if ("CONF" in e) arr.push(`<a target="_blank" href="${e.CONF}">conference</a>`)
 		
 	if ("NOTE" in e) arr.push(`${e.NOTE}`)
