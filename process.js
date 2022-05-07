@@ -86,6 +86,7 @@ for (const e of json) {
 		
 	// Own props:
 	if ("PDF" in e) arr.push(`<a target="_blank" href="./pdf/${e.PDF}">report</a> (pdf)`)
+	if ("ARXIV" in e) arr.push(`<a target="_blank" href="${e.ARXIV}">arXiv</a> (preprints)`)
 	if ("ABSTRACT" in e) arr.push(`<a target="_blank" href="./pdf/${e.ABSTRACT}">abstract</a> (pdf)`)
 	if ("LINK" in e) arr.push(`<a target="_blank" href="${e.LINK}">link</a>`)
 	if ("SLIDES" in e) arr.push(`<a target="_blank" href="pdf/${e.SLIDES}">slides</a> (pdf)`)
