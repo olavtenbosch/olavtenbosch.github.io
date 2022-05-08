@@ -9,7 +9,6 @@ const bibtexParse = require('bibtex-parse')
 https://www.bibtex.com/format/
 https://github.com/FlamingTempura/website
 https://github.com/FlamingTempura/bibtex-tidy
-https://github.com/FlamingTempura/bibtex-tidy
 https://github.com/FlamingTempura/bibtex-parse
 https://github.com/texworld/betterbib
 https://www.npmjs.com/package/astrocite-bibtex
