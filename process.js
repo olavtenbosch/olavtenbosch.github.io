@@ -68,7 +68,7 @@ for (const e of json) {
 	
 	//if ("YEAR" in e) arr.push(`(${e.YEAR}${e.MONTH?"/"+e.MONTH:""})`) // handy for displaying month
 	if ("YEAR" in e) arr.push(`(${e.YEAR})`)
-	if ("TITLE" in e) arr.push(`<i>${e.TITLE}</i>`)
+	if ("TITLE" in e) arr.push(`<span class="italic">${e.TITLE}</span>`)
 	if ("ORGANIZATION" in e) arr.push(`${e.ORGANIZATION}`)
 	if ("JOURNAL" in e) arr.push(`${e.JOURNAL}`)
 	if ("BOOKTITLE" in e) arr.push(`${e.BOOKTITLE}`)
