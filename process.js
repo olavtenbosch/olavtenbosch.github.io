@@ -68,6 +68,11 @@ for (const e of json) {
 	
 	//if ("YEAR" in e) arr.push(`(${e.YEAR}${e.MONTH?"/"+e.MONTH:""})`) // handy for displaying month
 	if ("YEAR" in e) arr.push(`(${e.YEAR})`)
+		
+	// tmp hack:
+	if (e.key == "olav_ten_bosch_2022_7665189") e.TITLE = "The awesome list of official statistics software & FOSS best practices"
+	// end tmp hack:
+	
 	if ("TITLE" in e) arr.push(`<span class="italic">${e.TITLE}</span>`)
 	if ("ORGANIZATION" in e) arr.push(`${e.ORGANIZATION}`)
 	if ("JOURNAL" in e) arr.push(`${e.JOURNAL}`)
