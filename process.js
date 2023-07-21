@@ -21,6 +21,7 @@ const { SitemapStream } = require('sitemap')
 const sitemap = new SitemapStream({ hostname: 'https://olavtenbosch.github.io' })
 const writeStream = fs.createWriteStream('./sitemap.xml')
 sitemap.pipe(writeStream)
+sitemap.write({ url: "./index.html", changefreq: 'weekly', priority: 1.0 })
 
 
 // MAKE TIDY:
