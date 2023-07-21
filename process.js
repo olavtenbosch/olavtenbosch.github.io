@@ -16,6 +16,13 @@ https://papercite.readthedocs.io
 https://scholar.google.com/intl/us/scholar/inclusion.html
 */
 
+// Sitemap:
+const { SitemapStream } = require('sitemap')
+const sitemap = new SitemapStream({ hostname: 'https://olavtenbosch.github.io' })
+const writeStream = fs.createWriteStream('./sitemap.xml')
+sitemap.pipe(writeStream)
+
+
 // MAKE TIDY:
 const bibtex = fs.readFileSync('./all.bib', 'utf8');
 let res = tidy.tidy(bibtex, {
@@ -89,9 +96,17 @@ for (const e of json) {
 		if ("DOI" in e) arr.push(`<a target="_blank" href="http://dx.doi.org/${e.DOI}">link</a>`)
 		
 	// Own props:
-	if ("PDF" in e) arr.push(`<a target="_blank" href="./pdf/${e.PDF}">report</a> (pdf)`)
+	if ("PDF" in e) {
+		let href = `./pdf/${e.PDF}`
+		arr.push(`<a target="_blank" href="${href}">report</a> (pdf)`)
+		sitemap.write({ url: `${href}`, changefreq: 'monthly', priority: 0.8 })
+	}
 	if ("ARXIV" in e) arr.push(`<a target="_blank" href="${e.ARXIV}">arXiv</a> (preprints)`)
-	if ("ABSTRACT" in e) arr.push(`<a target="_blank" href="./pdf/${e.ABSTRACT}">abstract</a> (pdf)`)
+	if ("ABSTRACT" in e) {
+		let href = `./pdf/${e.ABSTRACT}`
+		arr.push(`<a target="_blank" href="${href}">abstract</a> (pdf)`)
+		sitemap.write({ url: `${href}`, changefreq: 'monthly', priority: 0.5 })
+	}
 	if ("LINK" in e) arr.push(`<a target="_blank" href="${e.LINK}">link</a>`)
 	if ("SLIDES" in e) arr.push(`<a target="_blank" href="pdf/${e.SLIDES}">slides</a> (pdf)`)
 	if ("CONF" in e) arr.push(`<a target="_blank" href="${e.CONF}">conference</a>`)
@@ -111,3 +126,6 @@ home = home.replace(/(<!--PUBLICATIONS END-->)/, `${str}.\n${indent}$1`)
 
 // Write home:
 fs.writeFileSync(path.join(__dirname, './index.html'), home, 'utf8');
+
+// Close sitemap:
+sitemap.end();
