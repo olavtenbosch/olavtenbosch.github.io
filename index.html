@@ -10,14 +10,18 @@
 	<meta name="google" content="notranslate">
 	<!--link rel="shortcut icon" type="image/x-icon" href="/media/favicon.ico"-->
 	<!--link rel="stylesheet" type="text/css" href="./style.css"-->
-    <link href="https://cdn.jsdelivr.net/npm/beercss@2.3.0/dist/cdn/beer.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/beercss@2.3.0/dist/cdn/beer.min.js" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.0.10/dist/cdn/material-dynamic-colors.min.js" type="text/javascript"></script>
+	<link href="https://cdn.jsdelivr.net/npm/beercss@3.4.0/dist/cdn/beer.min.css" rel="stylesheet">
+	<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.4.0/dist/cdn/beer.min.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.0.5/dist/cdn/material-dynamic-colors.min.js"></script>
 
 	<style>
-		a {
+		a{
 			text-decoration: underline;
-			color: blue;
+			color:  var(--primary);
+		}
+		a.nolink{
+			text-decoration: none;
+			color: white;
 		}
 		bl {
 			list-style-type: none;
@@ -31,10 +35,10 @@
 </head>
 
 
-<body vocab="http://schema.org/" typeof="WebPage" class="home light">
+<body vocab="http://schema.org/" typeof="WebPage" class="dark">
 
 	<main class="responsive large-padding large-text">
-
+	
 		<div class="horizontal bottom-align max">
 			<h4 class="">Olav ten Bosch, PhD</h4>
 			<img class="circle large right-align large-elevate" src="./img/20210725_Olav2.png" alt="Olav ten Bosch" property="image"/>
@@ -43,20 +47,20 @@
 		
 		<p>
 			<span class="bold">Work fields:</span>
-			official statistics, metadata standards, web scraping, open data, visualization, open source software, citizen science
-		</p>
-		<p>
-			<span class="bold">Affiliations:</span> 
-			<a  target="_blank" href="https://www.cbs.nl">Statistics Netherlands</a>,
-			<a  target="_blank" href="https://www.drasticdata.nl">DrasticData</a>
+			official statistics, metadata standards, web scraping, open data, data visualization, open source software, citizen science
 		</p>
 		<p>
 			<span class="bold">Lives in:</span>
 			Delft, the Netherlands
 		</p>
 		<p>
+			<span class="bold">Affiliations:</span> 
+			<a  target="_blank" href="https://www.cbs.nl">Statistics Netherlands</a> | 
+			<a  target="_blank" href="https://www.drasticdata.nl">DrasticData</a>
+		</p>
+		<p>
 			<span class="bold">Email:</span>
-			<a  property="sameAs" target="_blank" href="mailto:olavtenbosch@gmail.com">olavtenbosch [at] gmail.com</a>
+			<a  property="sameAs" target="_blank" href="mailto:olavtenbosch@gmail.com">olavtenbosch@gmail.com</a>
 		</p>
 		<p>
 			<span class="bold">Other:</span>
@@ -71,9 +75,15 @@
 		
 		<div class="tiny-space"></div>
 		
-		<h4>Publications / Talks</h4>
+		
+		<div class="tabs left-align min" style="padding-left:0; padding-right:0;">
+			<a data-ui="#page1" class="nolink active"><h5>Publications</h5></a>
+			<a data-ui="#page2" class="nolink"><h5>Sites</h5></a>
+			<a data-ui="#page3" class="nolink"><h5>Other</h5></a>
+		</div>
 
-
+		<div class="page active" id="page1">
+			<div class="space"></div>
 			<bl class="content">
 				<!--PUBLICATIONS--><strong>2023</strong>
 <li> M. van der Loo,  O. ten Bosch, (2023), <span class="italic">Free and Open Source Software at Statistics Netherlands</span>, Conference of European Statisticians, Seventy-first plenary session, Geneva, 22-23 June 2023, <a target="_blank" href="./pdf/2025_FOSS-at-CBS_CES-conference.pdf">report</a> (pdf), <a target="_blank" href="https://unece.org/statistics/events/CES2023">conference</a></li>
@@ -151,33 +161,42 @@
 .
 				<!--PUBLICATIONS END-->
 
-			</bl>
-		<h4>Review work</h4>
-		<!--section-->
-			<bl class=" content">
-			<li>Reviewer for the <a target="_blank" href="https://officialstatistics.com/">Statistical Journal of the IAOS</a>
-			<li>Reviewer for the Open Access peer-reviewed journal <a target="_blank" href="https://journals.sagepub.com/home/bds">Big Data & Society</a> about the implications of Big Data for societies.
-		<!--/section-->
+		</div>
 		
-		<h4>Sites / Awesome lists</h4>
-		<!--section-->
-			<bl class=" content">
-			<li>Awesome list of official statistics software: <a target="_blank" href="http://www.awesomeofficialstatistics.org">awesomeofficialstatistics.org</a></li>
-			<li>Awesome web visualization frameworks: <a target="_blank" href="https://github.com/olavtenbosch/awesome-web-visualization-frameworks">https://github.com/olavtenbosch/awesome-web-visualization-frameworks</a></li>
-			<li>The Data Validation cookbook: <a target="_blank" href="https://data-cleaning.github.io/validate/">https://data-cleaning.github.io/validate/</a></li>
-			<li>DrasticData: <a target="_blank" href="https://www.drasticdata.nl">https://www.drasticdata.nl</a></li>
-			<li>Dutch regional education figures (Dutch): <a target="_blank" href="https://www.onderwijsinderegioincijfers.nl/">https://www.onderwijsinderegioincijfers.nl/</a></li>
-			<li>Student flows in Dutch education (Dutch): <a target="_blank" href="https://www.sterkberoepsonderwijs.nl/app/">https://www.sterkberoepsonderwijs.nl/app/</a></li>
-			<li>DrasticTreemap: <a target="_blank" href="https://www.drasticdata.nl/treemapping.htm?d=20110120Order_Details.tsv&sc=Revenue&gb=Category&lc=Revenue&cc=product">example</a></li>
-			<li>Validation dashboard: <a target="_blank" href="https://github.com/data-cleaning/ValidatReport">https://github.com/data-cleaning/ValidatReport</a></li>
+		<div class="page" id="page2">
+			<div class="space"></div>
+			<h6>Awesome lists</h6>
+			<bl class="content">
+				<li>Awesome list of official statistics software: <a target="_blank" href="https://github.com/SNStatComp/awesome-official-statistics-software">awesomeofficialstatistics.org</a></li>
+				<li>Awesome web visualization frameworks: <a target="_blank" href="https://github.com/olavtenbosch/awesome-web-visualization-frameworks">https://github.com/olavtenbosch/awesome-web-visualization-frameworks</a></li>
 			</bl>
-		<!--/section-->
+			
+			<h6>Sites</h6>
+			<bl class="content">
+				<li>DrasticData: <a target="_blank" href="https://www.drasticdata.nl">https://www.drasticdata.nl</a></li>
+				<li>Dutch regional education figures (Dutch): <a target="_blank" href="https://www.drasticdata.nl/regioscanner">https://www.drasticdata.nl/regioscanner</a></li>
+				<li>Student flows in Dutch education (Dutch): <a target="_blank" href="https://www.drasticdata.nl/stromen/index.html">https://www.drasticdata.nl/stromen/index.html</a></li>
+				<li>Interactive treemaps: <a target="_blank" href="https://www.drasticdata.nl/treemapping.htm?d=20110120Order_Details.tsv&sc=Revenue&gb=Category&lc=Revenue&cc=product">example</a></li>
+				<li>The Data Validation cookbook: <a target="_blank" href="https://data-cleaning.github.io/validate/">https://data-cleaning.github.io/validate/</a></li>
+				<li>Validation dashboard: <a target="_blank" href="https://github.com/data-cleaning/ValidatReport">https://github.com/data-cleaning/ValidatReport</a></li>
+			</bl>
+		</div>
 		
-		<h4>Other</h4>
-		<!--section-->
-			<bl class=" content">
-			<li>ClairCity: <a href="https://www.cbs.nl/en-gb/corporate/2017/24/claircity-citizen-led-air-pollution-reduction">News article CBS</a>
+		<div class="page" id="page3">
+			<div class="space"></div>
+			<h6>Review work</h6>
+			<bl class="content">
+				<li>Reviewer for the <a target="_blank" href="https://officialstatistics.com/">Statistical Journal of the IAOS</a></li>
+				<li>Reviewer for the Open Access peer-reviewed journal <a target="_blank" href="https://journals.sagepub.com/home/bds">Big Data & Society</a> about the implications of Big Data for societies.</li>
 			</bl>
+			
+			<h6>Other</h6>
+			<!--section-->
+			<bl class="content">
+				<li>ClairCity: <a href="https://www.cbs.nl/en-gb/corporate/2017/24/claircity-citizen-led-air-pollution-reduction">News article CBS</a></li>
+			</bl>
+		</div>
+
 	</main>
 
 </body>
