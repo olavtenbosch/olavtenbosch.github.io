@@ -60,7 +60,7 @@ for (const e of json) {
 	if ("SKIP" in e) continue
 	
 	if (e.YEAR != year) {
-		str += "<strong>"+e.YEAR+"</strong>\n"
+		str += "<h6 class='small'>"+e.YEAR+"</h6>\n"
 		year = e.YEAR
 	}
 	
@@ -114,7 +114,7 @@ for (const e of json) {
 		
 	if ("NOTE" in e) arr.push(`${e.NOTE}`)
 	
-	str += "<li>"+arr.join(', ')+"</li>\n"
+	str += "<article>"+arr.join(', ')+"</article>\n"
 }
 //fs.writeFileSync("all.html", page)
 
