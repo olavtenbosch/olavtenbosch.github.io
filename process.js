@@ -2,6 +2,7 @@
 
 const fs = require('fs')
 const path = require('path');
+//const querystring = require('node:querystring');
 const jsonfile = require('jsonfile')
 const tidy = require('bibtex-tidy')
 const bibtexParse = require('bibtex-parse')
@@ -111,6 +112,7 @@ for (const e of json) {
 	if ("LINK" in e) arr.push(`<a target="_blank" href="${e.LINK}">link</a>`)
 	if ("SLIDES" in e) arr.push(`<a target="_blank" href="pdf/${e.SLIDES}">slides</a> (pdf)`)
 	if ("CONF" in e) arr.push(`<a target="_blank" href="${e.CONF}">conference</a>`)
+	if ("RESEARCHGATE" in e) arr.push(`<a target="_blank" href="${e.RESEARCHGATE}">researchgate</a> `)
 		
 	if ("NOTE" in e) arr.push(`${e.NOTE}`)
 	
